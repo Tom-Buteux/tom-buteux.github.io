@@ -422,6 +422,8 @@
       .sidebar-left { display: none; }
       .contact-grid { grid-template-columns: 1fr; }
       .topbar-right .btn:not(.btn-primary) { display: none; }
+      .hero { flex-direction: row; align-items: center; gap: 1rem; }
+      .hero-portrait-mobile { display: block !important; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.15); }
     }
 
     /* ── TOOLTIP ── */
@@ -679,8 +681,7 @@
 
   </main>
 
-
-
+</div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Tooltip
@@ -735,3 +736,12 @@
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(s => {
+      if (s.getBoundingClientRect().top < 120) current = s.id;
+    });
+    links.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
