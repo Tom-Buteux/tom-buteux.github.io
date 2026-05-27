@@ -314,34 +314,53 @@
     .part-text strong { color: var(--text); font-weight: 500; }
 
     /* ── PUBLICATIONS ── */
-    <div class="pub-list">
-  <div class="pub-item">
-    <div class="pub-title">
-      <a href="https://doi.org/10.2514/6.2026-0281" target="_blank" class="pub-link">
-        Design and Performance Characterization of a Multi-Sensor Instrument for Stellar&ndash;Limb Optical Navigation
-      </a>
-    </div>
-    <div class="pub-authors">T. Buteux &amp; N. P. Bannister</div>
-    <div class="pub-meta-row">
-      <span class="pub-venue">AIAA SCITECH 2026 Forum</span>
-      <span class="pub-year">2026</span>
-      <a href="https://doi.org/10.2514/6.2026-0281" target="_blank" class="pub-doi">DOI: 10.2514/6.2026-0281 ↗</a>
-    </div>
-  </div>
-  <div class="pub-item">
-    <div class="pub-title">
-      <span class="pub-link">
-        Stellar&ndash;Limb Optical Navigation: A Novel Approach for Low-Altitude Horizon-Based Optical Navigation
-      </span>
-    </div>
-    <div class="pub-authors">T. Buteux &amp; N. P. Bannister</div>
-    <div class="pub-meta-row">
-      <span class="pub-venue">AIAA/AAS Astrodynamics Specialist Conference</span>
-      <span class="pub-year">July 2026</span>
-      <span class="exp-current">Accepted</span>
-    </div>
-  </div>
-</div>
+    .pub-list { display: flex; flex-direction: column; gap: 0; }
+    .pub-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .pub-item:first-child { padding-top: 0; }
+    .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .pub-title {
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--text); line-height: 1.4;
+    }
+    .pub-link {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    a.pub-link:hover { color: #7dd8f0; }
+
+    .pub-authors {
+      font-size: 0.78rem; color: var(--text-mid);
+      font-style: italic;
+    }
+
+    .pub-meta-row {
+      display: flex; align-items: center;
+      gap: 0.65rem; flex-wrap: wrap;
+      margin-top: 0.15rem;
+    }
+    .pub-venue { font-size: 0.78rem; color: var(--text-mid); }
+    .pub-year {
+      font-family: var(--mono); font-size: 0.68rem;
+      color: var(--text-dim);
+    }
+    .pub-doi {
+      font-family: var(--mono); font-size: 0.62rem;
+      padding: 0.15rem 0.5rem; border-radius: 5px;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text-mid); background: var(--surface2);
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .pub-doi:hover {
+      border-color: rgba(125,216,240,0.35);
+      color: #7dd8f0;
+    }
 
     /* ── EDUCATION ── */
     .edu-list { display: flex; flex-direction: column; gap: 0; }
